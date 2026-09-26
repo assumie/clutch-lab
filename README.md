@@ -4,6 +4,16 @@
 
 **[Try the live demo](https://assumie.github.io/clutch-lab/)** · [Made by Esther Lee Qian Hui](https://github.com/assumie)
 
+![Clutch Lab dashboard showing fictional demo sessions](assets/preview.png)
+
+*Dashboard preview with fictional matches. / 以上为虚构对局的示范画面。*
+
+## Why I built it / 为什么做这个
+
+I wanted a quick way to turn a lost CS2 duel into one useful practice goal. I designed and built the dashboard, session form, local journal, summaries, and JSON export using plain HTML, CSS, and JavaScript. The most interesting debugging lesson became the final puzzle in [Debug Dungeon](https://github.com/assumie/debug-dungeon).
+
+我想把每次 CS2 对枪失误，变成下一场可以练习的具体目标。这个项目用浏览器本地储存记录对局，并把数据整理成容易理解的趋势；其中一个真实的表单 bug 后来还变成了 **Debug Dungeon** 的最终关卡。
+
 ## What you can do
 
 - Explore a clearly labeled set of **fictional demo matches** before adding your own.
