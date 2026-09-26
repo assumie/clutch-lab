@@ -172,7 +172,7 @@
   }
   function open() {
     form.reset(); dateField.value = today(); dateField.max = today();
-    $('reason-options input').checked = true;
+    document.querySelector('#reason-options input').checked = true;
     $('form-error').hidden = true;
     dialog.showModal();
     dateField.focus();
