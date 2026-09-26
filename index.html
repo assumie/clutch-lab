@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#100c1e" />
+  <meta name="description" content="Clutch Lab is a CS2 practice journal that turns match results and lost duels into a clearer next focus." />
+  <title>Clutch Lab — Practice with purpose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Clutch Lab home"><span class="brand-mark" aria-hidden="true">✳</span><span>CLUTCH<span class="brand-line">/</span>LAB<small>THE PRACTICE JOURNAL</small></span></a>
+      <div class="sidebar-section">WORKSPACE</div>
+      <a href="#dashboard" class="nav-link active"><span class="nav-icon" aria-hidden="true">⌖</span> Overview <span class="nav-number">01</span></a>
+      <a href="#sessions" class="nav-link"><span class="nav-icon" aria-hidden="true">▤</span> Session log <span class="nav-number">02</span></a>
+      <a href="#patterns" class="nav-link"><span class="nav-icon" aria-hidden="true">◈</span> Patterns <span class="nav-number">03</span></a>
+      <div class="sidebar-note"><span class="dot"></span> TRAIN SMARTER <p>One honest note after every match. That is the whole strategy.</p></div>
+      <div class="sidebar-footer"><span class="avatar">E</span><span>Built by Esther<small>CS2 practice project</small></span></div>
+    </aside>
+    <main id="dashboard">
+      <header class="topbar"><span class="breadcrumb">WORKSPACE <span>/</span> OVERVIEW</span><div class="top-right"><span class="local-badge">◉ &nbsp; STORED ON THIS DEVICE</span><a href="https://github.com/assumie/clutch-lab" target="_blank" rel="noopener noreferrer">VIEW SOURCE ↗</a></div></header>
+      <div class="content">
+        <div class="hero"><div class="hero-grid"></div><div class="hero-copy"><span class="eyebrow">YOUR NEXT ROUND STARTS HERE <span>✦</span></span><h1>Practice with<br/><em>purpose.</em></h1><p>Log your matches. Find the pattern behind your lost duels. Walk into the next game with one thing to improve.</p><button id="open-log" class="primary-btn"><span>＋</span> LOG A SESSION <span>↗</span></button></div><div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="crosshair"><i></i><b></b><span></span></div><div class="orbit-label orbit-a">FOCUS // 01</div><div class="orbit-label orbit-b">AIM. REVIEW. REPEAT.</div></div></div>
+        <div id="mode-banner" class="mode-banner"><span class="mode-icon">✦</span><div><strong>Demo run is live</strong><p>You are viewing fictional sessions. Log your own match to start a private journal on this device.</p></div><button id="switch-mode" type="button">START MY LOG <span>↗</span></button></div>
+        <div class="section-top"><div><span class="kicker">01 / PERFORMANCE SNAPSHOT</span><h2>The numbers that matter.</h2></div><span id="period-label" class="period-pill">LAST 8 SESSIONS</span></div>
+        <div class="metrics"><article class="metric"><div class="metric-label">AVERAGE K / D <span>↗</span></div><div class="metric-value" id="metric-kd">—</div><div class="metric-foot">Kills ÷ deaths across sessions</div></article><article class="metric"><div class="metric-label">OPENING DUELS <span>⌖</span></div><div class="metric-value" id="metric-duels">—</div><div class="metric-foot">First engagements won</div></article><article class="metric"><div class="metric-label">HEADSHOT RATE <span>✳</span></div><div class="metric-value" id="metric-hs">—</div><div class="metric-foot">Headshot kills ÷ total kills</div></article><article class="metric metric-focus"><div class="metric-label">TOP FOCUS <span>◈</span></div><div class="metric-focus-text" id="metric-focus">—</div><div class="metric-foot">Most logged duel mistake</div></article></div>
+        <div class="insights"><section class="panel trend-panel"><div class="panel-head"><div><span class="kicker">02 / MOMENTUM</span><h3>Session by session</h3></div><span class="chart-key"><i></i> K / D RATIO</span></div><div id="trend-chart" class="trend-chart" role="img" aria-label="K/D ratio across recent sessions"></div><div class="chart-note">Progress comes from the pattern, not one perfect match.</div></section><section class="panel pattern-panel" id="patterns"><div class="panel-head"><div><span class="kicker">03 / REPEAT PATTERNS</span><h3>Why the duel was lost</h3></div><span class="pattern-glyph" aria-hidden="true">◈</span></div><div id="reason-list" class="reason-list"></div><div class="pattern-tip"><span>✦</span><p id="coach-tip">Log a match and choose one mistake to get a focused practice prompt.</p></div></section></div>
+        <section class="sessions-section" id="sessions"><div class="section-top"><div><span class="kicker">04 / THE SESSION LOG</span><h2>Every match tells a story.</h2></div><div class="session-actions"><button id="export-data" class="ghost-btn" type="button">↓ EXPORT JSON</button><button id="open-log-2" class="outline-btn" type="button">＋ NEW SESSION</button></div></div><div id="session-list" class="session-list"></div></section>
+        <footer>CLUTCH LAB <span>✦</span> BUILT BY ESTHER LEE QIAN HUI <span class="footer-right">PLAY. REVIEW. IMPROVE.</span></footer>
+      </div>
+    </main>
+  </div>
+  <dialog id="log-dialog" aria-labelledby="dialog-title"><form id="session-form" method="dialog"><div class="dialog-head"><div><span class="kicker">POST-MATCH REVIEW</span><h2 id="dialog-title">Log a session <span>✳</span></h2></div><button id="close-log" type="button" aria-label="Close form">×</button></div><div class="dialog-body"><p class="dialog-intro">Keep it honest. The goal is to notice one pattern you can practice.</p><div class="form-grid"><label>Date<input name="date" type="date" required /></label><label>Map<select name="map" required><option>Mirage</option><option>Dust II</option><option>Inferno</option><option>Nuke</option><option>Ancient</option><option>Anubis</option><option>Vertigo</option><option>Other</option></select></label></div><div class="form-grid three"><label>Kills<input name="kills" type="number" min="0" max="100" required placeholder="18" /></label><label>Deaths<input name="deaths" type="number" min="0" max="100" required placeholder="15" /></label><label>Headshot kills<input name="headshots" type="number" min="0" max="100" required placeholder="7" /></label></div><div class="form-grid"><label>Opening duels won<input name="duelWins" type="number" min="0" max="50" required placeholder="4" /></label><label>Opening duels lost<input name="duelLosses" type="number" min="0" max="50" required placeholder="3" /></label></div><fieldset><legend>One mistake to work on</legend><div id="reason-options" class="reason-options"></div></fieldset><label class="note-label">What happened? <span>(optional)</span><textarea name="note" rows="3" maxlength="240" placeholder="e.g. I keep wide swinging without a flash on B site."></textarea></label><p id="form-error" class="form-error" role="alert" hidden></p></div><div class="dialog-actions"><span>Private to this browser</span><button class="primary-btn" type="submit">SAVE SESSION ↗</button></div></form></dialog>
+</body>
+</html>
