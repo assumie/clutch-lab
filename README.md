@@ -48,7 +48,7 @@ The dashboard computes its summaries from the sessions currently shown. K/D uses
 | File | Purpose |
 | --- | --- |
 | `index.html` | Accessible dashboard and session form |
-| `styles.css` | Responsive purple and neon visual system |
+| `styles.css` | Responsive warm paper and charcoal visual system |
 | `app.js` | Demo data, local journal, summaries, and export |
 
 ## Next ideas
