@@ -83,7 +83,7 @@
     banner.querySelector('p').textContent = demoMode
       ? 'You are viewing fictional sessions. Log your own match to start a private journal on this device.'
       : 'These sessions are stored only in this browser. Export JSON to keep a backup.';
-    $('switch-mode').innerHTML = demoMode ? 'START MY LOG <span>↗</span>' : 'VIEW DEMO <span>↗</span>';
+    $('switch-mode').textContent = demoMode ? 'START MY LOG' : 'VIEW DEMO';
     $('period-label').textContent = `${Math.min(list.length, 8)} SESSION${list.length === 1 ? '' : 'S'} ${demoMode ? '· DEMO' : '· MY LOG'}`;
     const kills = list.reduce((n, s) => n + s.kills, 0);
     const deaths = list.reduce((n, s) => n + s.deaths, 0);
